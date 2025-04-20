@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chain Reviewer
 
-## Getting Started
+This project is build to showcase the usage of blockchain to create a system that can be used for effectively administer the fair dealing for developers. They could be sure of what they could earn and never gets cheated out of it. The AI used here is just the google gemini's api, so you may how is still a necessary level of decentralization is ensured? Well the simple answer is **chainlink functions**. It's a really cool tool and the reason for this project to came to be was for me to test it out. You can read more about it and it's pretty cool.
 
-First, run the development server:
+### Disclaimer ‼️
+I am not a professional smart contract dev and the smart contract used here hasn't been audicted so I would strongly advise you to not use this in any real world project involving real money, also the code written here dosen't completly follow the rules of preventing reduduncy and such.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview 👀
+A simple AI powered code reviewer in a trust minimised enviornment using blockchain
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Used ⚙️
+- **Next.js**: React framework for server-side rendering and routing.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **DaisyUI**: Tailwind CSS component library for UI components.
+- **Viem**: Ethereum library for interacting with smart contracts.
+- **Prisma**: ORM for database management.
+- **TypeScript**: Typed superset of JavaScript for type safety.
+- **Wagmi**: React hooks for Ethereum.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧪 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/ruhneb2004/chain_reviewer.git
+   cd chain_reviewer
+   ```
+2. **Install the dependencies**:
+    ```bash
+    npm install
+    ```
+3. ** Set up environment variables:**
+   ```bash
+   DATABASE_URL=your_database_url
+   NEXT_PUBLIC_PROJECT_ID="your project id"
+   NEXT_PUBLIC_INFURA_KEY=""
+   ```
+4.**Run database migrations**:
+    ```bash
+    npx prisma migrate dev
+    ```
+5.**Run the development server**:
+  ```bash
+  npm run dev
+  ```
 
-## Learn More
+## Things to look out for
 
-To learn more about Next.js, take a look at the following resources:
+You can get the infura api key after logging into the infura website and just paste that there and the project id you might be looking for will be available in 
+https://cloud.walletconnect.com/ just signin and look around, I am sure you will find it. Also in the env file, the variables that you are going to use in frontend needs to be prefixed with NEXT_PUBLIC. That's it all other things are pretty easy and you can figure it out yourself!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  
+   
