@@ -3,7 +3,7 @@
 This project is build to showcase the usage of blockchain to create a system that can be used for effectively administer the fair dealing for developers. They could be sure of what they could earn and never gets cheated out of it. The AI used here is just the google gemini's api, so you may how is still a necessary level of decentralization is ensured? Well the simple answer is **chainlink functions**. It's a really cool tool and the reason for this project to came to be was for me to test it out. You can read more about it and it's pretty cool.
 
 ### Disclaimer ‼️
-I am not a professional smart contract dev and the smart contract used here hasn't been audicted so I would strongly advise you to not use this in any real world project involving real money, also the code written here dosen't completly follow the rules of preventing reduduncy and such.
+I am not a professional smart contract dev and the smart contract used here hasn't been audicted so I would strongly advise you to not use this in any real world project involving real money, also the code written here dosen't completly follow the rules of preventing reduduncy and such. Also I wrote the code and tested it using remix and have just included it here.
 
 ## Overview 👀
 A simple AI powered code reviewer in a trust minimised enviornment using blockchain
