@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Job" ALTER COLUMN "earnableReward" SET DEFAULT 0,
+ALTER COLUMN "earnableReward" SET DATA TYPE DOUBLE PRECISION;

@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(uuid())
+  email String @unique
+  role String
+  address String @unique
+
+  assignedJobs Job[] @relation("assignedJobs")
+  takenJobs Job[] @relation("takenJobs")
+}
+
+model Job {
+  id String @id @default(uuid())
+  title String
+  description String
+  reward Float
+  status jobStatus?
+  repoLink String
+  appliedDev String[]
+  newRepoLink String?
+  activeJob Boolean @default(false)
+  earnableReward Float @default(0)
+  assignerId String
+  assigner User @relation("assignedJobs", fields: [assignerId], references: [id])
+  devId String?
+  dev User? @relation("takenJobs", fields: [devId], references: [id])
+}
+
+enum jobStatus {
+  PENDING
+  APPROVED
+  REWARDABLE
+  ASSIGNERACCEPTENCEPENDING
+  FINISHED
+}

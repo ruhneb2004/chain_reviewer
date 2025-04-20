@@ -1,0 +1,1 @@
+-- This migration failed, so we recreate it as a no-op to fix the history.
