@@ -14,6 +14,7 @@ A simple AI powered code reviewer in a trust minimised enviornment using blockch
 - **DaisyUI**: Tailwind CSS component library for UI components.
 - **Viem**: Ethereum library for interacting with smart contracts.
 - **Prisma**: ORM for database management.
+- **Postgres**: A SQL database
 - **TypeScript**: Typed superset of JavaScript for type safety.
 - **Wagmi**: React hooks for Ethereum.
 
