@@ -11,7 +11,7 @@ import {
 
 export const config = getDefaultConfig({
   appName: "Chained_Review",
-  projectId: "f07c0f3139ba1f80c42d1525852d1e1d",
+  projectId: `${process.env.NEXT_PUBLIC_PROJECT_ID}`,
   chains: [
     mainnet,
     polygon,
@@ -23,10 +23,10 @@ export const config = getDefaultConfig({
   ssr: true,
   transports: {
     [mainnet.id]: http(
-      "https://mainnet.infura.io/v3/0c9d9d43be7445fda11d5d4948704f25"
+      `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_KEY}`
     ),
     [sepolia.id]: http(
-      "https://sepolia.infura.io/v3/0c9d9d43be7445fda11d5d4948704f25"
+      `https://sepolia.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_KEY}`
     ),
   },
 });

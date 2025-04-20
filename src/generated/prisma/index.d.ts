@@ -1025,18 +1025,8 @@ export namespace Prisma {
 
   export type AggregateUser = {
     _count: UserCountAggregateOutputType | null
-    _avg: UserAvgAggregateOutputType | null
-    _sum: UserSumAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
-  }
-
-  export type UserAvgAggregateOutputType = {
-    withdrawableBalance: number | null
-  }
-
-  export type UserSumAggregateOutputType = {
-    withdrawableBalance: number | null
   }
 
   export type UserMinAggregateOutputType = {
@@ -1044,7 +1034,6 @@ export namespace Prisma {
     email: string | null
     role: string | null
     address: string | null
-    withdrawableBalance: number | null
   }
 
   export type UserMaxAggregateOutputType = {
@@ -1052,7 +1041,6 @@ export namespace Prisma {
     email: string | null
     role: string | null
     address: string | null
-    withdrawableBalance: number | null
   }
 
   export type UserCountAggregateOutputType = {
@@ -1060,25 +1048,15 @@ export namespace Prisma {
     email: number
     role: number
     address: number
-    withdrawableBalance: number
     _all: number
   }
 
-
-  export type UserAvgAggregateInputType = {
-    withdrawableBalance?: true
-  }
-
-  export type UserSumAggregateInputType = {
-    withdrawableBalance?: true
-  }
 
   export type UserMinAggregateInputType = {
     id?: true
     email?: true
     role?: true
     address?: true
-    withdrawableBalance?: true
   }
 
   export type UserMaxAggregateInputType = {
@@ -1086,7 +1064,6 @@ export namespace Prisma {
     email?: true
     role?: true
     address?: true
-    withdrawableBalance?: true
   }
 
   export type UserCountAggregateInputType = {
@@ -1094,7 +1071,6 @@ export namespace Prisma {
     email?: true
     role?: true
     address?: true
-    withdrawableBalance?: true
     _all?: true
   }
 
@@ -1136,18 +1112,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: UserAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: UserSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: UserMinAggregateInputType
@@ -1178,8 +1142,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: UserCountAggregateInputType | true
-    _avg?: UserAvgAggregateInputType
-    _sum?: UserSumAggregateInputType
     _min?: UserMinAggregateInputType
     _max?: UserMaxAggregateInputType
   }
@@ -1189,10 +1151,7 @@ export namespace Prisma {
     email: string
     role: string
     address: string
-    withdrawableBalance: number
     _count: UserCountAggregateOutputType | null
-    _avg: UserAvgAggregateOutputType | null
-    _sum: UserSumAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
   }
@@ -1216,7 +1175,6 @@ export namespace Prisma {
     email?: boolean
     role?: boolean
     address?: boolean
-    withdrawableBalance?: boolean
     assignedJobs?: boolean | User$assignedJobsArgs<ExtArgs>
     takenJobs?: boolean | User$takenJobsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -1227,7 +1185,6 @@ export namespace Prisma {
     email?: boolean
     role?: boolean
     address?: boolean
-    withdrawableBalance?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1235,7 +1192,6 @@ export namespace Prisma {
     email?: boolean
     role?: boolean
     address?: boolean
-    withdrawableBalance?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
@@ -1243,10 +1199,9 @@ export namespace Prisma {
     email?: boolean
     role?: boolean
     address?: boolean
-    withdrawableBalance?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "role" | "address" | "withdrawableBalance", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "role" | "address", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     assignedJobs?: boolean | User$assignedJobsArgs<ExtArgs>
     takenJobs?: boolean | User$takenJobsArgs<ExtArgs>
@@ -1266,7 +1221,6 @@ export namespace Prisma {
       email: string
       role: string
       address: string
-      withdrawableBalance: number
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1696,7 +1650,6 @@ export namespace Prisma {
     readonly email: FieldRef<"User", 'String'>
     readonly role: FieldRef<"User", 'String'>
     readonly address: FieldRef<"User", 'String'>
-    readonly withdrawableBalance: FieldRef<"User", 'Float'>
   }
     
 
@@ -3379,8 +3332,7 @@ export namespace Prisma {
     id: 'id',
     email: 'email',
     role: 'role',
-    address: 'address',
-    withdrawableBalance: 'withdrawableBalance'
+    address: 'address'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -3507,7 +3459,6 @@ export namespace Prisma {
     email?: StringFilter<"User"> | string
     role?: StringFilter<"User"> | string
     address?: StringFilter<"User"> | string
-    withdrawableBalance?: FloatFilter<"User"> | number
     assignedJobs?: JobListRelationFilter
     takenJobs?: JobListRelationFilter
   }
@@ -3517,7 +3468,6 @@ export namespace Prisma {
     email?: SortOrder
     role?: SortOrder
     address?: SortOrder
-    withdrawableBalance?: SortOrder
     assignedJobs?: JobOrderByRelationAggregateInput
     takenJobs?: JobOrderByRelationAggregateInput
   }
@@ -3530,7 +3480,6 @@ export namespace Prisma {
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
     role?: StringFilter<"User"> | string
-    withdrawableBalance?: FloatFilter<"User"> | number
     assignedJobs?: JobListRelationFilter
     takenJobs?: JobListRelationFilter
   }, "id" | "email" | "address">
@@ -3540,12 +3489,9 @@ export namespace Prisma {
     email?: SortOrder
     role?: SortOrder
     address?: SortOrder
-    withdrawableBalance?: SortOrder
     _count?: UserCountOrderByAggregateInput
-    _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
     _min?: UserMinOrderByAggregateInput
-    _sum?: UserSumOrderByAggregateInput
   }
 
   export type UserScalarWhereWithAggregatesInput = {
@@ -3556,7 +3502,6 @@ export namespace Prisma {
     email?: StringWithAggregatesFilter<"User"> | string
     role?: StringWithAggregatesFilter<"User"> | string
     address?: StringWithAggregatesFilter<"User"> | string
-    withdrawableBalance?: FloatWithAggregatesFilter<"User"> | number
   }
 
   export type JobWhereInput = {
@@ -3659,7 +3604,6 @@ export namespace Prisma {
     email: string
     role: string
     address: string
-    withdrawableBalance?: number
     assignedJobs?: JobCreateNestedManyWithoutAssignerInput
     takenJobs?: JobCreateNestedManyWithoutDevInput
   }
@@ -3669,7 +3613,6 @@ export namespace Prisma {
     email: string
     role: string
     address: string
-    withdrawableBalance?: number
     assignedJobs?: JobUncheckedCreateNestedManyWithoutAssignerInput
     takenJobs?: JobUncheckedCreateNestedManyWithoutDevInput
   }
@@ -3679,7 +3622,6 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    withdrawableBalance?: FloatFieldUpdateOperationsInput | number
     assignedJobs?: JobUpdateManyWithoutAssignerNestedInput
     takenJobs?: JobUpdateManyWithoutDevNestedInput
   }
@@ -3689,7 +3631,6 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    withdrawableBalance?: FloatFieldUpdateOperationsInput | number
     assignedJobs?: JobUncheckedUpdateManyWithoutAssignerNestedInput
     takenJobs?: JobUncheckedUpdateManyWithoutDevNestedInput
   }
@@ -3699,7 +3640,6 @@ export namespace Prisma {
     email: string
     role: string
     address: string
-    withdrawableBalance?: number
   }
 
   export type UserUpdateManyMutationInput = {
@@ -3707,7 +3647,6 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    withdrawableBalance?: FloatFieldUpdateOperationsInput | number
   }
 
   export type UserUncheckedUpdateManyInput = {
@@ -3715,7 +3654,6 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    withdrawableBalance?: FloatFieldUpdateOperationsInput | number
   }
 
   export type JobCreateInput = {
@@ -3836,17 +3774,6 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type FloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
-  }
-
   export type JobListRelationFilter = {
     every?: JobWhereInput
     some?: JobWhereInput
@@ -3862,11 +3789,6 @@ export namespace Prisma {
     email?: SortOrder
     role?: SortOrder
     address?: SortOrder
-    withdrawableBalance?: SortOrder
-  }
-
-  export type UserAvgOrderByAggregateInput = {
-    withdrawableBalance?: SortOrder
   }
 
   export type UserMaxOrderByAggregateInput = {
@@ -3874,7 +3796,6 @@ export namespace Prisma {
     email?: SortOrder
     role?: SortOrder
     address?: SortOrder
-    withdrawableBalance?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
@@ -3882,11 +3803,6 @@ export namespace Prisma {
     email?: SortOrder
     role?: SortOrder
     address?: SortOrder
-    withdrawableBalance?: SortOrder
-  }
-
-  export type UserSumOrderByAggregateInput = {
-    withdrawableBalance?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -3907,7 +3823,7 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+  export type FloatFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
     in?: number[] | ListFloatFieldRefInput<$PrismaModel>
     notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
@@ -3915,12 +3831,7 @@ export namespace Prisma {
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type EnumjobStatusNullableFilter<$PrismaModel = never> = {
@@ -4026,6 +3937,22 @@ export namespace Prisma {
     earnableReward?: SortOrder
   }
 
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
   export type EnumjobStatusNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.jobStatus | EnumjobStatusFieldRefInput<$PrismaModel> | null
     in?: $Enums.jobStatus[] | ListEnumjobStatusFieldRefInput<$PrismaModel> | null
@@ -4092,14 +4019,6 @@ export namespace Prisma {
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
-  }
-
-  export type FloatFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
   }
 
   export type JobUpdateManyWithoutAssignerNestedInput = {
@@ -4174,6 +4093,14 @@ export namespace Prisma {
     connect?: UserWhereUniqueInput
   }
 
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type NullableEnumjobStatusFieldUpdateOperationsInput = {
     set?: $Enums.jobStatus | null
   }
@@ -4223,17 +4150,6 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
-  }
-
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -4262,7 +4178,7 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
-  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+  export type NestedFloatFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
     in?: number[] | ListFloatFieldRefInput<$PrismaModel>
     notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
@@ -4270,12 +4186,7 @@ export namespace Prisma {
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type NestedEnumjobStatusNullableFilter<$PrismaModel = never> = {
@@ -4302,6 +4213,22 @@ export namespace Prisma {
   export type NestedBoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
   }
 
   export type NestedEnumjobStatusNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -4481,7 +4408,6 @@ export namespace Prisma {
     email: string
     role: string
     address: string
-    withdrawableBalance?: number
     takenJobs?: JobCreateNestedManyWithoutDevInput
   }
 
@@ -4490,7 +4416,6 @@ export namespace Prisma {
     email: string
     role: string
     address: string
-    withdrawableBalance?: number
     takenJobs?: JobUncheckedCreateNestedManyWithoutDevInput
   }
 
@@ -4504,7 +4429,6 @@ export namespace Prisma {
     email: string
     role: string
     address: string
-    withdrawableBalance?: number
     assignedJobs?: JobCreateNestedManyWithoutAssignerInput
   }
 
@@ -4513,7 +4437,6 @@ export namespace Prisma {
     email: string
     role: string
     address: string
-    withdrawableBalance?: number
     assignedJobs?: JobUncheckedCreateNestedManyWithoutAssignerInput
   }
 
@@ -4538,7 +4461,6 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    withdrawableBalance?: FloatFieldUpdateOperationsInput | number
     takenJobs?: JobUpdateManyWithoutDevNestedInput
   }
 
@@ -4547,7 +4469,6 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    withdrawableBalance?: FloatFieldUpdateOperationsInput | number
     takenJobs?: JobUncheckedUpdateManyWithoutDevNestedInput
   }
 
@@ -4567,7 +4488,6 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    withdrawableBalance?: FloatFieldUpdateOperationsInput | number
     assignedJobs?: JobUpdateManyWithoutAssignerNestedInput
   }
 
@@ -4576,7 +4496,6 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    withdrawableBalance?: FloatFieldUpdateOperationsInput | number
     assignedJobs?: JobUncheckedUpdateManyWithoutAssignerNestedInput
   }
 

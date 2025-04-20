@@ -121,8 +121,7 @@ exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   email: 'email',
   role: 'role',
-  address: 'address',
-  withdrawableBalance: 'withdrawableBalance'
+  address: 'address'
 };
 
 exports.Prisma.JobScalarFieldEnum = {

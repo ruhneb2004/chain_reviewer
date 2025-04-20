@@ -15,11 +15,10 @@ datasource db {
 }
 
 model User {
-  id                  String @id @default(uuid())
-  email               String @unique
-  role                String
-  address             String @unique
-  withdrawableBalance Float  @default(0)
+  id      String @id @default(uuid())
+  email   String @unique
+  role    String
+  address String @unique
 
   assignedJobs Job[] @relation("assignedJobs")
   takenJobs    Job[] @relation("takenJobs")
